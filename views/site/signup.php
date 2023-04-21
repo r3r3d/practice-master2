@@ -108,6 +108,7 @@
 </div>
 
 <form method="post">
+    <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
     <div class="main">
         <h1>Регистрация</h1>
         <div class="login-field">

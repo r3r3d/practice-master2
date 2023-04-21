@@ -132,6 +132,7 @@
     <div class="add-reader1">
     <div class="reader-name">
         <form method="post">
+            <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
         Введите имя:   <input type="text" placeholder="Имя...">
     </div>
     <div class="reader-number">

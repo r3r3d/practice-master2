@@ -106,6 +106,7 @@
 if (!app()->auth::check()):
     ?>
     <form method="post">
+        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
         </div>
         <div class="main">
             <h1>Вход в аккаунт</h1>
