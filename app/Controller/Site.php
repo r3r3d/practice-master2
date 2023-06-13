@@ -51,6 +51,10 @@ class Site
 
     public function add_user(Request $request): string
     {
+        if (Auth::user()->id_role != 1) {
+            app()->route->redirect('/hello');
+        }
+
         if ($request->method==='POST' && User::create($request->all())){
             return new View('site.hello', ['message'=>'пользователь добавлен']);
         }
@@ -97,9 +101,5 @@ class Site
     {
         return new View('site.admin', ['']);
     }
-
-
-
-
 
 }
